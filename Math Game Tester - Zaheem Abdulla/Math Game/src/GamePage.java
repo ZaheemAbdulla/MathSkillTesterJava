@@ -121,7 +121,7 @@ public class GamePage extends javax.swing.JFrame
         try 
         {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/mathgame", "root","iSleep@9");
+            Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/mathgame", "root","i");
             
             Statement st = con.createStatement();
             String query = "SELECT * FROM accounts where (Name) = ('"+playerName+"');";
@@ -432,7 +432,7 @@ public class GamePage extends javax.swing.JFrame
         try 
         {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/mathgame", "root","iSleep@9");
+            Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/mathgame", "root","i");
                 
             Statement st = con.createStatement();
             Statement st2 = con.createStatement();
@@ -731,7 +731,7 @@ public class GamePage extends javax.swing.JFrame
                         try 
                         {
                             Class.forName("com.mysql.cj.jdbc.Driver");
-                            Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/mathgame", "root","iSleep@9");
+                            Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/mathgame", "root","i");
 
                             Statement st = con.createStatement();
                             String query = "UPDATE accounts SET Highscore = ("+label2.getText()+") WHERE (UserNo = ("+name+"));";
@@ -877,7 +877,8 @@ public class GamePage extends javax.swing.JFrame
                     break;
                 }
             }
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) 
+        {
             java.util.logging.Logger.getLogger(GamePage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
